@@ -1,0 +1,289 @@
+/* Responsive styles */
+
+/* Large desktop (1200px and above) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .hero-text h2 {
+    font-size: 3rem;
+  }
+  
+  .hero-text h3 {
+    font-size: 2rem;
+  }
+  
+  .section-header h2 {
+    font-size: 2.25rem;
+  }
+}
+
+/* Medium desktop (992px - 1199px) */
+@media (max-width: 1199px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small desktop and tablet landscape (768px - 991px) */
+@media (max-width: 991px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-cta {
+    justify-content: center;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: 200px;
+    margin-top: var(--space-4);
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: var(--space-3);
+    text-align: center;
+  }
+  
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+/* Tablet portrait (576px - 767px) */
+@media (max-width: 767px) {
+  .container {
+    max-width: 540px;
+  }
+  
+  .header {
+    padding: var(--space-3) var(--space-3);
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+  }
+  
+  .nav.active {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-surface);
+    box-shadow: 0 4px 8px var(--color-shadow);
+    padding: var(--space-3);
+    z-index: 100;
+  }
+  
+  .nav.active ul {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+  
+  .timeline-date {
+    min-width: 100px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .mobile-hidden {
+    display: none;
+  }
+  
+  .section {
+    padding: var(--space-6) 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Mobile (575px and below) */
+@media (max-width: 575px) {
+  .header-content {
+    gap: var(--space-2);
+  }
+  
+  .name-title h1 {
+    font-size: 1rem;
+  }
+  
+  .name-title h2 {
+    font-size: 0.75rem;
+  }
+  
+  .timeline {
+    padding-left: var(--space-3);
+  }
+  
+  .timeline::before {
+    left: 10px;
+  }
+  
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    left: 5px;
+  }
+  
+  .timeline-item {
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-left: var(--space-3);
+  }
+  
+  .timeline-date {
+    margin-left: 0;
+    padding-top: 0;
+    font-size: 0.875rem;
+  }
+  
+  .hero-text h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .hero-cta {
+    flex-direction: column;
+    gap: var(--space-3);
+    width: 100%;
+  }
+  
+  .hero-cta .btn {
+    width: 100%;
+  }
+  
+  .education-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+  
+  .project-links {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .project-links .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .social-links {
+    justify-content: space-between;
+  }
+}
+
+/* Mobile menu active state */
+.mobile-menu-active .mobile-menu-btn span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.mobile-menu-active .mobile-menu-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-active .mobile-menu-btn span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Print styles for resume PDF */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+    font-size: 12pt;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .header,
+  .footer,
+  .nav,
+  .theme-toggle,
+  .mobile-menu-btn,
+  .btn,
+  .hero-cta,
+  .social-links,
+  .contact-form {
+    display: none !important;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: black;
+    page-break-after: avoid;
+  }
+  
+  p, li {
+    color: black;
+  }
+  
+  .section {
+    page-break-inside: avoid;
+    padding: 1cm 0;
+    border-bottom: 1pt solid #ddd;
+  }
+  
+  .profile-image {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .timeline-item,
+  .education-item,
+  .skill-item,
+  .project-card {
+    break-inside: avoid;
+  }
+}
